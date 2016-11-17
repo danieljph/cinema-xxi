@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:clickable="true"
+    android:layout_marginBottom="4dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="4dp"
+    android:background="@drawable/ripple_bg"
+    android:elevation="4dp"
+    android:padding="8dp">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/row_reminder_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tv_reminder_title"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cinema XXI Lotte Mart"/>
+
+        <TextView
+            android:id="@+id/tv_reminder_theater_info"
+            android:textColor="@color/white"
+            android:layout_below="@id/tv_reminder_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MALL TAMAN ANGGREK Lantai 3 Jl. Letjen S. Parman, Kav. 21 Jakarta Barat PHONE: (021) 563 9403 HTM: Senin s/d Kamis Rp 40.000 Jumat Rp 50.000 Sabtu, Minggu/Libur Rp 60.000" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#55000000"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        android:layout_below="@id/row_reminder_info_container">
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="2" />
+
+    </LinearLayout>
+</RelativeLayout>
