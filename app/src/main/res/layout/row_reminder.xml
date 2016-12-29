@@ -14,7 +14,6 @@
     android:padding="8dp">
 
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/row_reminder_info_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

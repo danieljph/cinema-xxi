@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:clickable="true"
+    android:layout_marginBottom="4dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="4dp"
+    android:background="@drawable/ripple_bg"
+    android:elevation="4dp"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:text="Theater"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_city"
+        android:text="Jakarta"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_below="@id/tv_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_theater"
+        android:text="Setiabudi One XXI"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_below="@id/tv_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

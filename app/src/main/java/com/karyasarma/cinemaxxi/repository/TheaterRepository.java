@@ -1,7 +1,7 @@
 package com.karyasarma.cinemaxxi.repository;
 
 import com.karyasarma.android.util.Log2;
-import com.karyasarma.cinemaxxi.exception.ApplicationException;
+import com.karyasarma.android.exception.ApplicationException;
 import com.karyasarma.cinemaxxi.model.Theater;
 
 import org.jsoup.Connection;
@@ -71,7 +71,7 @@ public class TheaterRepository
                 String theaterAddress = Jsoup.parse(a.attr("rel")).text();
 
                 Theater theater = new Theater();
-                theater.setId(theaterId);
+                theater.setId(Long.parseLong(theaterId));
                 theater.setCode(theaterCode);
                 theater.setName(theaterName);
                 theater.setUrlName(theaterUrlName);
@@ -86,5 +86,15 @@ public class TheaterRepository
         }
 
         return listOfTheaters;
+    }
+
+    public static void main(String[] args) throws ApplicationException
+    {
+        List<Theater> listOfTheater = new TheaterRepository().findAll();
+
+        for(Theater theater : listOfTheater)
+        {
+            System.out.println(theater);
+        }
     }
 }

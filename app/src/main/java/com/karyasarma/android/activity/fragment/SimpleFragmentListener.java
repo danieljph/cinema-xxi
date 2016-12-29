@@ -1,4 +1,4 @@
-package com.karyasarma.cinemaxxi.activity.fragment;
+package com.karyasarma.android.activity.fragment;
 
 /**
  *

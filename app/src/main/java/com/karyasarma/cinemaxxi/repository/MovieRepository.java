@@ -1,7 +1,7 @@
 package com.karyasarma.cinemaxxi.repository;
 
 import com.karyasarma.android.util.Log2;
-import com.karyasarma.cinemaxxi.exception.ApplicationException;
+import com.karyasarma.android.exception.ApplicationException;
 import com.karyasarma.cinemaxxi.model.ListMovie;
 import com.karyasarma.cinemaxxi.model.Movie;
 import com.karyasarma.cinemaxxi.model.Theater;
@@ -82,7 +82,7 @@ public class MovieRepository
         //Theater{id=334, code=JKTPRLS, name=LOTTE S. AVENUE XXI PREMIERE, urlName=bioskop-lotte-s-avenue-xxi-premiere, phone=(021) 29889421, address=Ciputra World Jakarta Jl. PROF. DR. Satrio KAV 3-5, Kuningan Jakarta Selatan}
 
         Theater theater = new Theater();
-        theater.setId("334");
+        theater.setId(334L);
         theater.setCode("JKTPRLS");
         theater.setUrlName("bioskop-lotte-s-avenue-xxi-premiere");
         ListMovie lm = new MovieRepository().findByTheater(theater);

@@ -1,4 +1,4 @@
-package com.karyasarma.cinemaxxi.exception;
+package com.karyasarma.android.exception;
 
 /**
  *

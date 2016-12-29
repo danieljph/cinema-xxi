@@ -10,9 +10,10 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+import com.karyasarma.android.activity.fragment.SimpleFragment;
 import com.karyasarma.cinemaxxi.R;
 import com.karyasarma.cinemaxxi.activity.adapter.ListReminderAdapter;
-import com.karyasarma.cinemaxxi.exception.ApplicationException;
+import com.karyasarma.android.exception.ApplicationException;
 import com.karyasarma.cinemaxxi.model.ListMovie;
 import com.karyasarma.cinemaxxi.model.ListReminder;
 import com.karyasarma.cinemaxxi.model.Reminder;
@@ -47,9 +48,9 @@ public class ReminderFragment extends SimpleFragment
         super.onActivityCreated(savedInstanceState);
 
         listReminder = new ListReminder();
-        listReminder.add(new Reminder("Movie - Anggrek XXI", new Theater("15", "JKTANGG", "bioskop-anggrek-xxi")));
-        listReminder.add(new Reminder("Movie - Emporium Pluit Premiere", new Theater("281", "JKTPREP", "bioskop-emporium-pluit-premiere")));
-        listReminder.add(new Reminder("Movie - Kemang Village Premiere", new Theater("323", "JKTPRKV", "bioskop-kemang-village-premiere")));
+        listReminder.add(new Reminder("Movie - Anggrek XXI", new Theater(15, "JKTANGG", "bioskop-anggrek-xxi")));
+        listReminder.add(new Reminder("Movie - Emporium Pluit Premiere", new Theater(281, "JKTPREP", "bioskop-emporium-pluit-premiere")));
+        listReminder.add(new Reminder("Movie - Kemang Village Premiere", new Theater(323, "JKTPRKV", "bioskop-kemang-village-premiere")));
 
         listReminderAdapter = new ListReminderAdapter(listReminder);
 

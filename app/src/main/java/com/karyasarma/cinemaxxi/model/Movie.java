@@ -1,14 +1,15 @@
 package com.karyasarma.cinemaxxi.model;
 
+import com.orm.SugarRecord;
+
 import java.io.Serializable;
 
 /**
  *
  * @author Daniel Joi Partogi Hutapea
  */
-public class Movie implements Serializable
+public class Movie extends SugarRecord implements SimpleEntity
 {
-    private int id;
     private String code;
     private String title;
     private String showtime;
@@ -21,16 +22,6 @@ public class Movie implements Serializable
     {
         this.title = title;
         this.showtime = showtime;
-    }
-
-    public int getId()
-    {
-        return id;
-    }
-
-    public void setId(int id)
-    {
-        this.id = id;
     }
 
     public String getCode()
@@ -66,6 +57,6 @@ public class Movie implements Serializable
     @Override
     public String toString()
     {
-        return "Movie{"+"id="+id+", code="+code+", title="+title+", showtime="+showtime+'}';
+        return "Movie{"+"id="+getId()+", code="+code+", title="+title+", showtime="+showtime+'}';
     }
 }

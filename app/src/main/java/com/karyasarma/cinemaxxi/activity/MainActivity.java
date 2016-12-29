@@ -7,10 +7,11 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import com.karyasarma.cinemaxxi.R;
+import com.karyasarma.cinemaxxi.activity.fragment.MovieSettingsFragment;
 import com.karyasarma.cinemaxxi.activity.fragment.PrimaryFragment;
 import com.karyasarma.cinemaxxi.activity.fragment.ReminderFragment;
 import com.karyasarma.cinemaxxi.activity.fragment.SecondaryFragment;
-import com.karyasarma.cinemaxxi.activity.fragment.SimpleFragmentListener;
+import com.karyasarma.android.activity.fragment.SimpleFragmentListener;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -31,8 +32,11 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 public class MainActivity extends AppCompatActivity implements AccountHeader.OnAccountHeaderListener, Drawer.OnDrawerItemClickListener, SimpleFragmentListener
 {
     private static final int REMINDER_MENU = 1;
-    private static final int PRIMARY_MENU = 2;
-    private static final int SECONDARY_MENU = 3;
+    private static final int MOVIE_SETTING_MENU = 2;
+    private static final int PRIMARY_MENU = 3;
+    private static final int SECONDARY_MENU = 4;
+
+    private Toolbar toolbar;
     private Drawer drawer;
 
     @Override
@@ -59,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements AccountHeader.OnA
                 .withOnAccountHeaderListener(this)
                 .build();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         PrimaryDrawerItem item1 = new PrimaryDrawerItem()
@@ -68,6 +72,11 @@ public class MainActivity extends AppCompatActivity implements AccountHeader.OnA
                 .withIcon(GoogleMaterial.Icon.gmd_home)
                 .withBadge("10")
                 .withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700));
+
+        SecondaryDrawerItem movieSettingItem = new SecondaryDrawerItem()
+                .withIdentifier(MOVIE_SETTING_MENU)
+                .withName("Movie Setting")
+                .withIcon(GoogleMaterial.Icon.gmd_settings);
 
         SecondaryDrawerItem item2 = (SecondaryDrawerItem) new SecondaryDrawerItem()
                 .withIdentifier(PRIMARY_MENU)
@@ -83,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements AccountHeader.OnA
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .withAccountHeader(accountHeader)
-                .addDrawerItems(item1, new DividerDrawerItem(), item2, item3)
+                .addDrawerItems(item1, movieSettingItem, new DividerDrawerItem(), item2, item3)
                 .addStickyDrawerItems(new PrimaryDrawerItem().withName("Powered by Karyasarma"))
                 .withOnDrawerItemClickListener(this)
                 .build();
@@ -91,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements AccountHeader.OnA
 
     public void initDefaultFragment()
     {
-        setSelectedFragment(REMINDER_MENU);
+        setSelectedFragment(MOVIE_SETTING_MENU);
     }
 
     /**
@@ -133,6 +142,7 @@ public class MainActivity extends AppCompatActivity implements AccountHeader.OnA
         switch((int)identifier)
         {
             case REMINDER_MENU: fragmentTransaction.replace(R.id.fragment_container, ReminderFragment.newInstance(), ReminderFragment.TAG); break;
+            case MOVIE_SETTING_MENU: fragmentTransaction.replace(R.id.fragment_container, MovieSettingsFragment.newInstance(), MovieSettingsFragment.TAG); toolbar.setTitle("Movie Settings"); break;
             case PRIMARY_MENU: fragmentTransaction.replace(R.id.fragment_container, PrimaryFragment.newInstance(), PrimaryFragment.TAG); break;
             case SECONDARY_MENU: fragmentTransaction.replace(R.id.fragment_container, SecondaryFragment.newInstance(), SecondaryFragment.TAG); break;
         }

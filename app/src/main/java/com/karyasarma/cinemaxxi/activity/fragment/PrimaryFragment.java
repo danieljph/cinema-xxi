@@ -2,6 +2,7 @@ package com.karyasarma.cinemaxxi.activity.fragment;
 
 import android.os.Bundle;
 
+import com.karyasarma.android.activity.fragment.SimpleFragment;
 import com.karyasarma.cinemaxxi.R;
 
 /**
